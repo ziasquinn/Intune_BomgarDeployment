@@ -23,10 +23,13 @@ if [ $number -eq 0 ]
     then    
         scriptDir=$(dirname $0)
         hdiutil attach -nobrowse -mountpoint /Volumes/bomgar-install $scriptDir/bomgar-scc-<GUID>.dmg
-        sudo /Volumes/bomgar-install/Double-Click\ To\ Start\ Support\ Session.app/Contents/MacOS/sdcust --silent
-        sleep 15
+        sudo /Volumes/bomgar-scc/Open\ To\ Start\ Support\ Session.app/Contents/MacOS/sdcust --silent
+    sleep 15
 fi
 ```
+
+EDIT: You can check the specific language of the installer by mounting the .dmg and examining the name of the pkg inside.
+
 
 On Packages, go to the script tab and import "postinstall.sh" and "bomgar.dmg" from the project folder.
 
